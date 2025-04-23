@@ -1,10 +1,7 @@
 package Hooks;
 
 
-import io.cucumber.java.After;
-import io.cucumber.java.Before;
-import io.cucumber.java.BeforeStep;
-import io.cucumber.java.Scenario;
+import io.cucumber.java.*;
 
 public class SearchHook {
 
@@ -17,6 +14,11 @@ public class SearchHook {
     @BeforeStep()
     public void takeScreenshotBefore() {
         System.out.println("Takes screenshot before every step");
+    }
+
+    @AfterStep()
+    public void refreshPage() {
+        System.out.println("Refreshing Page");
     }
 
     @After()
