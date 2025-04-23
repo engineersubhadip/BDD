@@ -16,12 +16,12 @@ public class LoginSteps {
 
     @When("^User enters (.+) as the email address$")
     public void userEntersLoginEmail(String userEmail) {
-        System.out.println("When Keyword "+"User enters email");
+        System.out.println("When Keyword "+"User enters email "+userEmail);
     }
 
     @When("^User enters (.+) as the password$")
     public void userEntersLoginPassword(String userPassword) {
-        System.out.println("When keyword "+"user enters password");
+        System.out.println("When keyword "+"user enters password "+userPassword);
     }
 
     @When("User clicks on the login button")
