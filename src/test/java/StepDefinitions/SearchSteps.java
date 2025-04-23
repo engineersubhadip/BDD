@@ -3,6 +3,7 @@ package StepDefinitions;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
+import org.junit.Assert;
 
 public class SearchSteps {
 
@@ -24,5 +25,6 @@ public class SearchSteps {
     @Then("User should see {string} in the search results")
     public void getSearchResult(String searchResult) {
         System.out.println("Step 4 : User is seeing "+searchResult+" on the list of results");
+//        Assert.fail();
     }
 }
