@@ -43,10 +43,12 @@ public class DriverManager {
     }
 
     public WebDriver getDriver() {
+        System.out.println("Driver inside Singleton : "+tLocal.get());
         if (tLocal.get() != null) {
             return tLocal.get();
+        }else {
+            throw new RuntimeException("Please create the driver first");
         }
-        throw new RuntimeException("Please create the driver first");
     }
 
     public void quitDriver() {
