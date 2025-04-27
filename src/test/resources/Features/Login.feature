@@ -1,6 +1,6 @@
 Feature: User Login Feature
 
-  @Smoke
+
   Scenario: User successfully logs into the application
     Given User lands on the "Login" page of the application
     When User enters the "test@sify.com" as the email

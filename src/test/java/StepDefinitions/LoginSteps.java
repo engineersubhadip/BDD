@@ -1,20 +1,28 @@
 package StepDefinitions;
 
 import DriverConfig.DriverManager;
+import PageObjects.HomePage;
 import PageObjects.LoginPage;
 import PageObjects.MyAccountPage;
+import PageObjects.ProductSearchPage;
 import io.cucumber.java.en.Given;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
+
+import java.sql.Driver;
 
 public class LoginSteps {
 
     private LoginPage loginPage;
     private MyAccountPage myAccountPage;
+    private HomePage homePage;
+    private ProductSearchPage productSearchPage;
 
     public LoginSteps() {
         loginPage = new LoginPage(DriverManager.getInstance().getDriver());
         myAccountPage = new MyAccountPage(DriverManager.getInstance().getDriver());
+        homePage = new HomePage(DriverManager.getInstance().getDriver());
+        productSearchPage = new ProductSearchPage(DriverManager.getInstance().getDriver());
     }
 
     @Given("User lands on the {string} page of the application")
@@ -24,6 +32,10 @@ public class LoginSteps {
             Thread.sleep(2000);
         } else if (currPage.equalsIgnoreCase("My Account")) {
             Assert.assertTrue(myAccountPage.waitForMyAccountPageToLoad());
+        } else if (currPage.equalsIgnoreCase("Home")) {
+            Assert.assertTrue(homePage.waitForHomePageToLoad());
+        } else if (currPage.equalsIgnoreCase("Search")) {
+            Assert.assertTrue(productSearchPage.waitForProductSearchPageToLoad());
         }
     }
 

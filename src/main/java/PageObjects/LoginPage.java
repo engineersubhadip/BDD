@@ -18,7 +18,7 @@ public class LoginPage {
 
     public boolean waitForLoginPageToLoad() {
         try {
-            BrowserUtility.waitForTitleToAppear(driver,15, loginPageTitle);
+            BrowserUtility.waitForTitleToAppear(driver,20, this.loginPageTitle);
         } catch (Exception e) {
             return false;
         }
