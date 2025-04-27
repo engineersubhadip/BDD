@@ -13,6 +13,7 @@ public class ProductSearchPage {
     private By productList = By.xpath("//div[contains(@class,'product-grid')] //div");
     private By productSearchHeader = By.xpath("//h1[contains(text(),'Search')]");
     private By successMsg = By.xpath("//div[@id='product-search']/div[last()]/preceding-sibling::div");
+    private By shoppingCartIcon = By.xpath("//a[@title = 'Shopping Cart']");
 
     public ProductSearchPage(WebDriver driver) {
         this.driver = driver;
@@ -71,5 +72,10 @@ public class ProductSearchPage {
             return false;
         }
         return true;
+    }
+
+    public void clickOnShoppingCartIcon() {
+        BrowserUtility.waitForElementToAppear(driver,shoppingCartIcon, 10);
+        driver.findElement(shoppingCartIcon).click();
     }
 }

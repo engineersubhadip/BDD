@@ -21,4 +21,21 @@ public class BrowserUtility {
         wait = new WebDriverWait(driver, Duration.ofSeconds(time));
         wait.until(ExpectedConditions.titleContains(title));
     }
+
+    public static String sanitizeAmount(String amount) {
+        StringBuilder sb = new StringBuilder();
+        for (int i=0; i<amount.length(); i++) {
+            char currChar = amount.charAt(i);
+            if (currChar == '.') {
+                sb.append('.');
+                continue;
+            }
+            int currASCII = (int)currChar;
+            if (currASCII >= 48 && currASCII <= 57) {
+                sb.append(currChar);
+            }
+        }
+        String result = sb.toString();
+        return result;
+    }
 }

@@ -3,6 +3,7 @@ package StepDefinitions;
 import DriverConfig.DriverManager;
 import PageObjects.HomePage;
 import PageObjects.ProductSearchPage;
+import Utility.BrowserUtility;
 import io.cucumber.java.en.Then;
 import io.cucumber.java.en.When;
 import org.junit.Assert;
@@ -35,6 +36,11 @@ public class ProductSearchSteps {
     @When("User clicks on Add to Cart button for {string}")
     public void clickAddtoCart(String userProduct) {
         productSearchPage.addToCart(userProduct);
+    }
+
+    @When("User clicks on Shopping cart icon")
+    public void clickOnShoppingCart() {
+        productSearchPage.clickOnShoppingCartIcon();
     }
 
     @Then("User verifies the success message")
